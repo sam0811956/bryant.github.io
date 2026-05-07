@@ -26,7 +26,10 @@ jobs:
         run: npm install
 
       - name: Install Theme Dependencies
-        run: cd themes/next && npm install
+        run: npm install --prefix themes/next
+
+      - name: Verify Theme Directory
+        run: ls -la themes/next/layout
 
       - name: Build Hexo
         run: npm run build
